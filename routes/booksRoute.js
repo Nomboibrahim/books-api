@@ -1,9 +1,10 @@
 const {Router}= require("express")
 const { getBooks,deleteBook } = require("../controllers/booksController")
+const auth = require("../middlewares/books.auth")
 const router= Router();
 
-router.route("/books").get(getBooks)
-router.get("/books/:title", deleteBook)
+router.route("/books").get(auth, getBooks)
+router.delete("/books/:title", deleteBook)
 
 
 module.exports=router

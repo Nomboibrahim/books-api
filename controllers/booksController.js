@@ -9,7 +9,7 @@ const getBooks =(req, res)=>{
 //delete a book
 
 const deleteBook= (req, res)=>{
-    res.json(books.filter((book)=> book.title!==req.params.title))
+    res.json(books.filter((book)=> book.title!=req.params.title))
 }
 /*const deleteBook =async(req, res)=>{
     const foundBook =await books.findByTitle(req, params.title)
